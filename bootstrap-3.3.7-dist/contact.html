@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Mr. Bekar</title>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<link rel = "stylesheet" href = "css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "css/contact.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxmXUG_5KnkOEn0d5oDGy21GSM-jyl8ww"></script>
+	<script src = "js/jquery-3.2.1.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/contact.js"></script>
+</head>
+
+<body>
+	<!--navigation bar -->
+	<nav class = "navbar navbar-fixed-top navbar-default">
+		<div class = "container">
+			<!--place for logo -->
+			<div class = "navbar-header">
+				<a href = "#" class = "navbar-brand">Mr. Bekar</a>
+				<!--button to show or collapse main navigation bar -->
+				<button class = "navbar-toggle" data-toggle = "collapse" data-target = "#mainNavBar">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+			</div>
+			<!-- this holds the actual contents of the navigation bar -->
+			<div class = "collapse navbar-collapse" id = "mainNavBar">
+				<ul class = "nav navbar-nav">
+					<li><a href = "index.html">Welcome</a></li>
+					<li><a href = "#">About Us</a></li>
+					<li class = "active"><a href = "#">Contact</a></li>
+					<!--dropdown list -->
+					<li class = "dropdown">
+						<a href = "#">More <span class = "caret"></span></a>
+						<ul class = "dropdown-menu">
+							<li><a href = "faq.html">FAQ</a></li>
+							<li><a href = "#">Guidelines</a></li>
+							<li><a href = "#">Terms and Policies</a></li>
+							<li><a href = "#">User Reviews</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<br>
+	<div class = "container">
+		<h3 class = "text-info">Contact</h3>
+	</div>
+	<hr>
+	<div class = "container" id = "contactAddress">
+		<h4 class = "text-primary">Address</h4>
+		<br>
+		<!--written address at the left, map at the right -->
+		<div class = "container">
+			<div class = "row">
+				<div class = "well col-md-3">
+					<p class = "text-info">3/A, Lily,</p>
+					<p class = "text-info">Navana Garden,</p>
+					<p class = "text-info">Kallyanpur,</p>
+					<p class = "text-info">Dhaka-1207</p>
+				</div>
+				<div class = "col-md-9">
+					<div class = "jumbotron">
+						<div id = "mapContainer">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class = "container" id = "contactEmail">
+		<h4 class = "text-primary">Email</h4>
+		<br>
+		<!--written email at the left, contact form at the right -->
+		<div class = "container">
+			<div class = "row">
+				<div class = "well col-md-3">
+					<p class = "text-info">shadmansoumik9@gmail.com</p>
+					<p class = "text-info">ss9jo.o.o.o.oss@gmail.com</p>
+				</div>
+				<div class = "col-md-9">
+					<div class = "jumbotron">
+						<form id = "contactForm">
+							<div class = "form-group">
+								<label for = "contactEmail">Email</label>
+								<input class = "form-control" type = "email" placeholder = "Enter your email"
+								 name = "contactEmail" id = "contactEmail" autocomplete = "off" required>
+							</div>
+							<div class = "form-group">
+								<label for = "contactMessage">Message</label>
+								<textarea class = "form-control" placeholder = "Enter your message" rows = "5"
+								 name = "contactMessage" id = "contactMessage" autocomplete = "off" required></textarea>
+							</div>
+							<button type = "submit" class = "btn btn-success btn-block" id = "contactMessageSubmit"
+							 >Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class = "container" id = "contactTel">
+		<h4 class = "text-primary">Telephone</h4>
+		<br>
+		<div class = "well">
+			<p class = "text-info">+880-1624695241</p>
+			<p class = "text-info">+880-1624812552</p>
+			<p class = "text-info">+880-1673990868</p>
+		</div>
+	</div>
+	
+	<!--footer -->
+	<footer>
+		<div class = "container text-center">
+			<h3>Mr. Baker</h3>
+		</div>
+		<!--list of other pages -->
+		<div class = "container text-center">
+			<ul class = "list-inline">
+				<li class = "list-inline-item"><a href = "index.html">Welcome</a></li>
+				<li class = "list-inline-item"><a href = "#">About Us</a></li>
+				<li class = "list-inline-item"><a href = "#">Contact</a></li>
+				<li class = "list-inline-item"><a href = "faq.html">FAQ</a></li>
+				<li class = "list-inline-item"><a href = "#">Guidelines</a></li>
+				<li class = "list-inline-item"><a href = "#">Terms and Policies</a></li>
+				<li class = "list-inline-item"><a href = "#">User Reviews</a></li>
+			</ul>
+		</div>
+		<!--list of social networks -->
+		<div class = "container text-center socialIcons">
+			<ul class = "list-inline">
+				<li class = "list-inline-item">
+					<a href = "#"><span class = "fa fa-twitter"></span></a>
+				</li>
+				<li class = "list-inline-item">
+					<a href = "#"><span class = "fa fa-facebook"></span></a>
+				</li>
+				<li class = "list-inline-item">
+					<a href = "#"><span class = "fa fa-youtube"></span></a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+	
+	<!--modals -->
+	<div class = "modal fade" id = "contactMessageSent">
+		<div class = "modal-dialog modal-md">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Report</h3>
+				</div>
+				<div class = "modal-body">
+					<p class = "text-info">We received your message. Thank you for writing to us.</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-primary" id = "contactModalClosed"
+					 data-dismiss = "modal">You're Welcome</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

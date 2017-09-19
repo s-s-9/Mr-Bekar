@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Mr. Bekar</title>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<link rel = "stylesheet" href = "css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "css/companyhome.css">
+	<script src = "js/jquery-3.2.1.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/companyhome.js"></script>
+</head>
+
+<body>
+	<!--navigation bar -->
+	<nav class = "navbar navbar-fixed-top navbar-default">
+		<div class = "container">
+			<!--place for logo -->
+			<div class = "navbar-header">
+				<a href = "#" class = "navbar-brand">Mr. Bekar</a>
+				<!--button to show or collapse main navigation bar -->
+				<button class = "navbar-toggle" data-toggle = "collapse" data-target = "#mainNavBar">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+			</div>
+			<!-- this holds the actual contents of the navigation bar -->
+			<div class = "collapse navbar-collapse" id = "mainNavBar">
+				<ul class = "nav navbar-nav">
+					<li class = "active"><a href = "companyhome.html">Home</a></li>
+					<li><a href = "companyprofile.html">Profile</a></li>
+					<li><a href = "companyhistory.html">History</a></li>
+				</ul>
+				<!--search bar -->
+				<form class = "navbar-form navbar-left">
+					<div class = "input-group dropdown">
+						<input type = "text" class = "form-control" placeholder = "Type here to search..." 
+						name = "searchAtNavbar" id = "searchAtNavbar" autocomplete = "off">
+						<span class = "input-group-addon dropdown-toggle" data-toggle = "dropdown">
+							<a href = "#"><span class = "glyphicon glyphicon-search"></span></a>
+						</span>
+						<ul class="dropdown-menu" id = "searchAtNavbarResults">
+							
+						</ul>
+					</div>
+				</form>
+				
+				<!-- stuffs to float at the right side of the navbar (logout) -->
+				<ul class = "nav navbar-nav navbar-right">
+					<li>
+						<button type = "button" class = "btn btn-primary navbar-btn" id = "logoutButton">Logout</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<br>
+	<!--place to post a job -->
+	<button class = "btn btn-block btn-success" id = "postajobbutton">Post a job <span class = "caret"></span></button>
+	<br>
+	<div class = "container" id = "postajobformcontainer">
+		<form  id = "postajobform">
+			<input type = "hidden" name = "jobskill0" id = "jobskill0" value = "none">
+			<input type = "hidden" name = "jobskill1" id = "jobskill1" value = "none">
+			<input type = "hidden" name = "jobskill2" id = "jobskill2" value = "none">
+			<input type = "hidden" name = "joblanguage0" id = "joblanguage0" value = "none">
+			<input type = "hidden" name = "joblanguage1" id = "joblanguage1" value = "none">
+			<input type = "hidden" name = "joblanguage2" id = "joblanguage2" value = "none">
+			<input type = "hidden" name = "joblanguage3" id = "joblanguage3" value = "none">
+			<input type = "hidden" name = "joblanguage4" id = "joblanguage4" value = "none">
+			<div class = "form-group">
+				<label for = "jobposition">Position</label>
+				<input type = "text" class = "form-control" name = "jobposition" id = "jobposition" autocomplete = "off" required>
+			</div>
+			<div class = "form-group">
+				<label for = "jobtype">Type</label>
+				<select class = "form-control" name = "jobtype" id = "jobtype">
+					<option value = "Permanent" selected>Permanent</option>
+					<option value = "Part Time">Part Time</option>
+				</select>
+			</div>
+			<div class = "form-group" id = "skillsForaJob">
+				<label>Required Skills</label>
+				<div class = "row">
+					<div class = "col-md-6 col-sm-6 col-xs-6">
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "dbm">Database Management</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "gmd">Game Development</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "mad">Mobile Application Development</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "net">Networking</label>
+						</div>
+					</div>
+					<div class = "col-md-6 col-sm-6 col-xs-6">
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "oop">Object Orinted Programming</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "prs">Problem Solving</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "wdb">Web Development(Back End)</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "wdf">Web Development (Front End)</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "form-group" id = "languagesForaJob">
+				<label>Proficient in</label>
+				<div class = "checkbox text-center">
+					<label class = "checkbox-inline"><input type = "checkbox" value = "cor">C</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "cpp">C++</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "jav">Java</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "pyt">Python</label>
+				</div>
+				<hr>
+				<div class = "checkbox text-center">
+					<label class = "checkbox-inline"><input type = "checkbox" value = "htm">HTML5</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "css">CSS3</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "php">PHP</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "msq">MySql</label>
+				</div>
+				<hr>
+				<div class = "checkbox text-center">
+					<label class = "checkbox-inline"><input type = "checkbox" value = "csh">C#</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "rub">Ruby</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "per">Perl</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "njs">Node JS</label>
+				</div>
+				<hr>
+				<div class = "checkbox text-center">
+					<label class = "checkbox-inline"><input type = "checkbox" value = "dot">.NET</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "mon">MongoDB</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "vba">Visual Basic</label>
+					<label class = "checkbox-inline"><input type = "checkbox" value = "fba">Firebase</label>
+				</div>
+			</div>
+			<div class = "form-group">
+				<label for = "jobsalary">Minimum Salary</label>
+				<input type = "number" min = "5000" max = "1000000000" class = "form-control" name = "jobsalary" id = "jobsalary" 
+				autocomplete = "off" required>
+			</div>
+			<div class = "form-group">
+				<label for = "jobdeadline">Deadline</label>
+				<input type = "date" class = "form-control" name = "jobdeadline" id = "jobdeadline" required>
+			</div>
+			<div class = "form-group">
+				<label for = "jobcircular">Circular</label>
+				<input type = "file" class = "form-control" name = "jobcircular" id = "jobcircular" required>
+			</div>
+			<button type = "submit" class = "btn btn-block btn-success">Post</button>
+		</form>
+		<br>
+	</div>
+	
+	<!--footer -->
+	
+	<!--modals to show error messages if format is not supported or file is too big -->
+	<div class = "modal fade" id = "fileFormatErrorModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Oops!</h3>
+				</div>
+				<div class = "modal-body">
+					<p>This file format is not supported.</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-warning" data-dismiss = "modal">Sorry!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "modal fade" id = "fileSizeErrorModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Oops!</h3>
+				</div>
+				<div class = "modal-body">
+					<p>Your file is too big.</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-warning" data-dismiss = "modal">Sorry!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--modal to show after job has been posted -->
+	<div class = "modal fade" id = "jobPostedModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Congrats!</h3>
+				</div>
+				<div class = "modal-body">
+					<p>Your job has been posted.</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-success" id = "jobPostedThanks" data-dismiss = "modal">Thanks!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

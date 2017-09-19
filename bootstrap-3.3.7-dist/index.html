@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Mr. Bekar</title>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<link rel = "stylesheet" href = "css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "css/index.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxmXUG_5KnkOEn0d5oDGy21GSM-jyl8ww"></script>
+	<script src = "js/jquery-3.2.1.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/index.js"></script>
+</head>
+
+<body>
+	<!--navigation bar -->
+	<nav class = "navbar navbar-fixed-top navbar-default">
+		<div class = "container">
+			<!--place for logo -->
+			<div class = "navbar-header">
+				<a href = "#" class = "navbar-brand">Mr. Bekar</a>
+				<!--button to show or collapse main navigation bar -->
+				<button class = "navbar-toggle" data-toggle = "collapse" data-target = "#mainNavBar">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+			</div>
+			<!-- this holds the actual contents of the navigation bar -->
+			<div class = "collapse navbar-collapse" id = "mainNavBar">
+				<ul class = "nav navbar-nav">
+					<li class = "active"><a href = "index.html">Welcome</a></li>
+					<li><a href = "aboutus.html">About Us</a></li>
+					<li><a href = "contact.html">Contact</a></li>
+					<!--dropdown list -->
+					<li class = "dropdown">
+						<a href = "#">More <span class = "caret"></span></a>
+						<ul class = "dropdown-menu">
+							<li><a href = "faq.html">FAQ</a></li>
+							<li><a href = "#">Guidelines</a></li>
+							<li><a href = "#">Terms and Policies</a></li>
+							<li><a href = "#">User Reviews</a></li>
+						</ul>
+					</li>
+				</ul>
+				<!-- stuffs to float at the right side of the navbar (login, sign up) -->
+				<ul class = "nav navbar-nav navbar-right">
+					<li class = "btn-group">
+						<button type = "button" class = "btn btn-primary navbar-btn" 
+						 data-toggle = "modal" data-target = "#loginModal" id = "loginButton">Login</button>
+						<button type = "button" class = "btn btn-primary navbar-btn"
+						 data-toggle = "modal" data-target = "#signupModal" id = "signupButton">Sign Up</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--carousel -->
+	<div class = "container-fluid" id = "indexCarouselContainer">
+		<div class = "carousel slide" id = "indexCarousel" data-ride = "carousel">
+			<!--little circles at the bottom -->
+			<ul class = "carousel-indicators">
+				<li class = "active" data-slide-to = "0" data-target = "#indexCarousel"></li>
+				<li data-slide-to = "1" data-target = "#indexCarousel"></li>
+				<li data-slide-to = "2" data-target = "#indexCarousel"></li>
+				<li data-slide-to = "3" data-target = "#indexCarousel"></li>
+			</ul>
+			<!--actual carousel -->
+			<div class = "carousel-inner">
+				<div class = "item active">
+					<img src = "images/torres0.jpg">
+				</div>
+				<div class = "item">
+					<img src = "images/torres1.jpg">
+				</div>
+				<div class = "item">
+					<img src = "images/torres2.jpg">
+				</div>
+				<div class = "item">
+					<img src = "images/torres3.jpg">
+				</div>
+			</div>
+			<!--controls to slide left and right -->
+			<div class = "left carousel-control" data-slide = "prev" data-target = "#indexCarousel">
+				<a href = "#"><span class = "glyphicon glyphicon-chevron-left"></span></a>
+			</div>
+			<div class = "right carousel-control" data-slide = "next" data-target = "#indexCarousel">
+				<a href = "#"><span class = "glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+		</div>
+	</div>
+	
+	<!--paragraphs about the website -->
+	<div class = "container">
+		<h3 class = "text-primary alert alert-info">You might wanna read these...</h3>
+	</div>
+	<div class = "container" id = "indexLoneParagraph">
+		<div class = "row">
+			<div class = "col-md-12">
+				<div class = "well">
+					<h3 class = "text-info">What is this website?</h3>
+					<p>Welcome. This is a website where Bekars can search, apply for and find jobs. With a profile here, 
+					you will get to see job opening news of many reputed companies and can apply for an interview. 
+					Here, you can enrich your profile with the skills you have and projects you made so that it attracts 
+					companies that are hiring. Try to upgrade your skills, as job openings will only be visible to those who
+					have the proper skills and know specific languages. Here, companies will post jobs, and eligible bekars
+					can apply if they're interested. A company will analyze the profiles of the bekars that applied for a job 
+					and offer them who seem fit for the job. A profile must include a resume, and projects must be uploaded 
+					for each skill, else the companies won't know how awesome you are. And like that, your bekar days are gonna
+					be over very soon. Best wishes.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "container" id = "indexDoubleParagraph">
+		<div class = "row">
+			<div class = "col-md-6">
+				<div class = "well">
+					<h3 class = "text-info">Get going right now</h3>
+					<p>Start right now. Reach out. No company's gonna knock on doors searching for bekars to work for them. 
+					You have to look for companies and start applying. First, develop a specific kind of skill set, so that 
+					your preferences will be specific. Then, keep improving your skills by practicing and doing more and more 
+					projects. You might not realize the importance of doing projects yet, but trust us, this is all companies 
+					look for. Besides, solve problems, a lot of them. Every job interview has programming related questions, 
+					so if you thought you can escape from programming, sorry, it just won't let you. Start by solving simple 
+					problems in online judges or other websites, don't give up and you'll be pro in no time. Programming 
+					is fun, and if you're afraid of it, you have no idea how awesome your life could have been.</p>
+				</div>
+			</div>
+			<div class = "col-md-6">
+				<div class = "well">
+					<h3 class = "text-info">Don't get mad</h3>
+					<p>We know it's frustrating being a Bekar. But this is just a temporary phase that you'll get over very soon. 
+					In the mean time, prepare yourself for the bright future ahead by developing new skills and learning new 
+					programming languages. Keep your hopes high. Whatever you learn will, at some point help you. Don't take 
+					rejections personally, instead try to look at it from a sporting perspective. Job market is very competitive, 
+					and you have to prove yourself worthy to get a place there. So instead of whining like a little bitch, get up, 
+					learn and improve yourself!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--footer -->
+	<footer>
+		<div class = "container text-center">
+			<h3>Mr. Baker</h3>
+		</div>
+		<!--list of other pages -->
+		<div class = "container text-center">
+			<ul class = "list-inline">
+				<li class = "list-inline-item"><a href = "index.html">Welcome</a></li>
+				<li class = "list-inline-item"><a href = "aboutus.html">About Us</a></li>
+				<li class = "list-inline-item"><a href = "contact.html">Contact</a></li>
+				<li class = "list-inline-item"><a href = "faq.html">FAQ</a></li>
+				<li class = "list-inline-item"><a href = "#">Guidelines</a></li>
+				<li class = "list-inline-item"><a href = "#">Terms and Policies</a></li>
+				<li class = "list-inline-item"><a href = "#">User Reviews</a></li>
+			</ul>
+		</div>
+		<!--list of social networks -->
+		<div class = "container text-center socialIcons">
+			<ul class = "list-inline">
+				<li class = "list-inline-item">
+					<a href = "#"><span class = "fa fa-twitter"></span></a>
+				</li>
+				<li class = "list-inline-item">
+					<a href = "#"><span class = "fa fa-facebook"></span></a>
+				</li>
+				<li class = "list-inline-item">
+					<a href = "#"><span class = "fa fa-youtube"></span></a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+	
+	<!-- here are all the actual modals, because placing modals inside something fixed (like navbar) will freeze the screen -->
+	<div class = "modal fade" id = "loginModal">
+		<div class = "modal-dialog modal-sm">
+			<!-- the modal contents will be here -->
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Login</h3>
+				</div>
+				<div class = "modal-body">
+					<form id = "loginForm">
+						<div class = "form-group">
+							<label for = "emailLogin">Email</label>
+							<span class = "glyphicon glyphicon-remove" id = "loginEmailValidity"></span>
+							<input type = "email" class = "form-control" autocomplete = "off"
+							 id = "emailLogin" name = "emailLogin" placeholder = "Enter your email" required>
+						</div>
+						<div class = "form-group">
+							<label for = "passwordLogin">Password</label>
+							<span class = "glyphicon glyphicon-remove" id = "loginPasswordValidity"></span>
+							<input type = "password" class = "form-control" autocomplete = "off"
+							 id = "passwordLogin" name = "passwordLogin" placeholder = "Enter your password" required>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<input type = "submit" form = "loginForm" class = "btn btn-success" id = "loginSubmit" 
+					 data-dismiss = "modal" value = "Login">
+					<button type = "button" class = "btn btn-primary" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "modal fade" id = "signupModal">
+		<div class = "modal-dialog modal-md">
+			<!-- the modal contents will be here -->
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Sign Up</h3>
+				</div>
+				<div class = "modal-body">
+					<form id = "signupForm">
+						<div class = "form-group">
+							<label for = "nameSignup">Name</label>
+							<span class = "glyphicon glyphicon-remove" id = "signupNameValidity"></span>
+							<input type = "text" class = "form-control" autocomplete = "off"
+							 name = "nameSignup" id = "nameSignup" placeholder = "Enter full name" required>
+						</div>
+						<div class = "form-group" id = "birthdaySignupFormGroup">
+							<label for = "birthdaySignup">Date of Birth</label>
+							<span class = "glyphicon glyphicon-remove" id = "signupBirthdayValidity"></span>
+							<input type = "date" class = "form-control" 
+							 name = "birthdaySignup" id = "birthdaySignup" placeholder = "Select your date of birth" required>
+						</div>
+						<div class = "form-group" id = "genderSignupFormGroup">
+							<label for = "genderSignup">Gender</label>
+							<span class = "glyphicon glyphicon-ok" id = "signupGenderValidity"></span><br>
+							<label class = "radio-inline">
+								<input type = "radio" name = "genderSignup" value = "male" checked required>Male
+							</label>
+							<label class = "radio-inline">
+								<input type = "radio" name = "genderSignup" value = "female" required>Female
+							</label>
+						</div>
+						<div class = "form-group">
+							<label for = "emailSignup">Email</label>
+							<span class = "glyphicon glyphicon-remove" id = "signupEmailValidity"></span>
+							<input type = "email" class = "form-control" contenteditable = "true" autocomplete = "off"
+							 name = "emailSignup" id = "emailSignup" placeholder = "Enter your email" required>
+						</div>
+						<div class = "form-group">
+							<label for = "passwordSignup">Password</label>
+							<span class = "glyphicon glyphicon-remove" id = "signupPasswordValidity"></span>
+							<input type = "password" class = "form-control"
+							 name = "passwordSignup" id = "passwordSignup" placeholder = "Enter the password you'll use for this site" required>
+						</div>
+						<div class = "form-group">
+							<label for = "roleSignup">You are a</label>
+							<span class = "glyphicon glyphicon-ok" id = "signupRoleValidity"></span>
+							<select class = "form-control" name = "roleSignup" id = "roleSignup" required>
+								<option value = "baker" selected>Baker</option>
+								<option value = "company">Company</option>
+							</select>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<input type = "submit" form = "signupForm" class = "btn btn-success" id = "signupSubmit" 
+					 data-dismiss = "modal" value = "Sign Up">
+					<button type = "button" class = "btn btn-primary" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "modal fade" id = "registrationSuccess">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Report</h3>
+				</div>
+				<div class = "modal-body">
+					<p>Registration successful!</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-success" id = "closeRegistrationSuccessful" 
+					 data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "modal fade" id = "loginFailure">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Report</h3>
+				</div>
+				<div class = "modal-body">
+					<p>Incorrect email/password combination!</p>
+				</div>
+				<div class = "modal-footer">
+					<button class = "btn btn-warning" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

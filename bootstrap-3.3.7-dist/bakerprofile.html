@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Mr. Bekar</title>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<link rel = "stylesheet" href = "css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "css/bakerprofile.css">
+	<script src = "js/jquery-3.2.1.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/bakerprofile.js"></script>
+</head>
+
+<body>
+	<!--navigation bar -->
+	<nav class = "navbar navbar-fixed-top navbar-default">
+		<div class = "container">
+			<!--place for logo -->
+			<div class = "navbar-header">
+				<a href = "#" class = "navbar-brand">Mr. Bekar</a>
+				<!--button to show or collapse main navigation bar -->
+				<button class = "navbar-toggle" data-toggle = "collapse" data-target = "#mainNavBar">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+			</div>
+			<!-- this holds the actual contents of the navigation bar -->
+			<div class = "collapse navbar-collapse" id = "mainNavBar">
+				<ul class = "nav navbar-nav">
+					<li><a href = "bakerhome.html">Home</a></li>
+					<li class = "active"><a href = "bakerprofile.html">Profile</a></li>
+					<li><a href = "bakerhistory.html">History</a></li>
+				</ul>
+				<!--search bar -->
+				<form class = "navbar-form navbar-left">
+					<div class = "input-group dropdown">
+						<input type = "text" class = "form-control" placeholder = "Type here to search..." 
+						name = "searchAtNavbar" id = "searchAtNavbar" autocomplete = "off">
+						<span class = "input-group-addon dropdown-toggle" data-toggle = "dropdown">
+							<a href = "#"><span class = "glyphicon glyphicon-search"></span></a>
+						</span>
+						<ul class="dropdown-menu" id = "searchAtNavbarResults">
+							
+						</ul>
+					</div>
+				</form>
+				
+				<!-- stuffs to float at the right side of the navbar (logout) -->
+				<ul class = "nav navbar-nav navbar-right">
+					<li>
+						<button type = "button" class = "btn btn-primary navbar-btn" id = "logoutButton">Logout</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br/>
+	<!--place to show the user's name and profile picture -->
+	<div class = "container text-center">
+		<figure class = "figure">
+			<a href = "#"  data-toggle = "modal" data-target = "#viewProfilePicModal">
+				<img class = "img-circle" id = "profilePic">
+			</a>
+			<figcaption class = "figure-caption">
+				<a href = "#" data-toggle = "modal" data-target = "#updateProfilePicModal">Update Profile Picture</a>
+			</figcaption>
+		</figure>
+		<h3 class = "text-info" id = "showNameInProfile"></h3>
+	</div>
+	
+	<hr>
+	
+	<!--section showing resume -->
+	<div class = "container" id = "resumeSection">
+		<h3 class = "text-info">Resume</h3>
+		<a href = "#" class = "btn btn-success pull-right" data-toggle = "modal" data-target = "#updateResumeModal">Upload Resume</a>
+		<p class = "text-warning" id = "noResumeWarning">You haven't uploaded a resume yet. 
+		 It is highly recommended that you do so.</p>
+		<a href = "#" id = "resumeLink" download></a>
+	</div>
+	<hr>
+	<!--tabbed sections to update skills, languages and upload projects-->
+	<div class = "container">
+		<h3 class = "text-info">Credibility</h3>
+		<!--here are the tabs -->
+		<ul class = "nav nav-tabs">
+			<li class = "active"><a href = "#skills" data-toggle = "tab">Skills</a>
+			<li><a href = "#languages" data-toggle = "tab">Languages</a>
+			<li><a href = "#projects" data-toggle = "tab">Projects</a>
+		</ul>
+		<!-- here are the actual panes -->
+		<div class = "tab-content">
+			<div class = "tab-pane fade in text-center active" id = "skills">
+				<h4 class = "text-info">Your Skills</h4>
+				<dl id = "skillList" class = "jumbotron">
+					
+				</dl>
+				<p class = "alert alert-info">These are your current skills. You can specify at most 5 skills here. 
+				   Be careful about choosing skills because you can only apply for the jobs that your current skillset meets. 
+				   However, you can always update skills by clicking the Update Skills button below.</p>
+				<button class = "btn btn-success" data-toggle = "modal" data-target = "#updateSkillsModal">Update Skills</button>
+			</div>
+			<div class = "tab-pane fade in text-center" id = "languages">
+				<h4 class = "text-info">Languages you know</h4>
+				<dl id = "languageList" class = "jumbotron">
+					
+				</dl>
+				<p class = "alert alert-info">These are the languages you currently know. You can specify at most 10 languages here. 
+				   Be careful about choosing languages because you can only apply for the jobs that your current set of languages 
+				   meets. However, you can always update these by clicking the Update Languages button below.</p>
+				<button class = "btn btn-success" data-toggle = "modal" data-target = "#updateLanguagesModal">Update Languages</button>
+			</div>
+			<div class = "tab-pane fade in text-center" id = "projects">
+				<h4 class = "text-info">Projects</h4>
+				<div id = "showProjects">
+					
+				</div>
+				<p class = "alert alert-info">This section shows the projects that you've done. You can add as many projects
+					as you want by clicking the button below. You can delete a project by clicking the trash icon beside
+					your project.</p>
+				<button class = "btn btn-success" data-toggle = "modal" data-target = "#updateProjectModal">Add a Project</button>
+			</div>
+		</div>
+	</div>
+	<hr>
+	
+	<!--footer -->
+
+	<!--here are the modals (to view profile picture, to update stuffs)-->
+	<div class = "modal fade" id = "viewProfilePicModal">
+		<div class = "modal-dialog modal-md">
+			<div class = "modal-content">
+				
+				<div class = "modal-body text-center">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<br/><br/>
+					<img id = "viewProfilePicImg" height = "500px" width = "500px">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modal to update profile picture -->
+	<div class = "modal fade" id = "updateProfilePicModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Update Profile Picture</h3>
+				</div>
+				<div class = "modal-body">
+					<form action = "php/bakerprofile.php" method = "POST" enctype = "multipart/form-data" id = "uploadPictureForm">
+						<div class = "form-group">
+							<label for = "picture">Upload new profile picture</label>
+							<input type = "file" class = "form-control" name = "picture" id = "picture" required>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<button type = "submit" form = "uploadPictureForm" class = "btn btn-success" name = "upload">Upload</button>
+					<button class = "btn btn-primary" data-dismiss = "modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modal to upload resume -->
+	<div class = "modal fade" id = "updateResumeModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title text-info">Upload Resume</h3>
+				</div>
+				<div class = "modal-body">
+					<form action = "php/bakerprofile.php" method = "POST" enctype = "multipart/form-data" id = "uploadResumeForm">
+						<div class = "form-group">
+							<label for = "picture">Upload Resume</label>
+							<input type = "file" class = "form-control" name = "resume" id = "resume" required>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<button type = "submit" form = "uploadResumeForm" class = "btn btn-success" name = "upload">Upload</button>
+					<button class = "btn btn-primary" data-dismiss = "modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modal to update skills -->
+	<div class = "modal fade" id = "updateSkillsModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Update your skills</h3>
+				</div>
+				<div class = "modal-body">
+					<form action = "bakerprofile.php" method = "POST" id = "updateSkillsForm">
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "dbm">Database Management</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "gmd">Game Development</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "mad">Mobile Application Development</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "net">Networking</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "oop">Object Orinted Programming</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "prs">Problem Solving</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "wdb">Web Development(Back End)</label>
+						</div>
+						<div class = "checkbox">
+							<label class = "checkbox"><input type = "checkbox" value = "wdf">Web Development (Front End)</label>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<button type = "submit" form = "updateSkillsForm" class = "btn btn-success">Update</button>
+					<button class = "btn btn-primary" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modal to update languages -->
+	<div class = "modal fade" id = "updateLanguagesModal">
+		<div class = "modal-dialog modal-md">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Update your languages</h3>
+				</div>
+				<div class = "modal-body">
+					<form action = "bakerprofile.php" method = "POST" id = "updateLanguagesForm">
+						<div class = "checkbox text-center">
+							<label class = "checkbox-inline"><input type = "checkbox" value = "cor">C</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "cpp">C++</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "jav">Java</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "pyt">Python</label>
+						</div>
+						<hr>
+						<div class = "checkbox text-center">
+							<label class = "checkbox-inline"><input type = "checkbox" value = "htm">HTML5</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "css">CSS3</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "php">PHP</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "msq">MySql</label>
+						</div>
+						<hr>
+						<div class = "checkbox text-center">
+							<label class = "checkbox-inline"><input type = "checkbox" value = "csh">C#</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "rub">Ruby</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "per">Perl</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "njs">Node JS</label>
+						</div>
+						<hr>
+						<div class = "checkbox text-center">
+							<label class = "checkbox-inline"><input type = "checkbox" value = "dot">.NET</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "mon">MongoDB</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "vba">Visual Basic</label>
+							<label class = "checkbox-inline"><input type = "checkbox" value = "fba">Firebase</label>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<button type = "submit" form = "updateLanguagesForm" class = "btn btn-success">Update</button>
+					<button class = "btn btn-primary" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modal to update projects -->
+	<div class = "modal fade" id = "updateProjectModal">
+		<div class = "modal-dialog modal-md">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Add New Project</h3>
+				</div>
+				<div class = "modal-body">
+					<form id = "updateProjectForm">
+						<div class = "form-group">
+							<label for = "projectName">Name of Your Project</label>
+							<input type = "text" class = "form-control" name = "projectName" id = "projectName" required>
+						</div>
+						<div class = "form-group">
+							<label for = "projectDesc">Write something about this project</label>
+							<textarea class = "form-control" name = "projectDesc" id = "projectDesc" rows = "5" required></textarea>
+						</div>
+						<div class = "form-group">
+							<label for = "projectSkills">Select the category this project belongs to</label>
+							<select class = "form-control" name = "projectSkills" id = "projectSkills" required>
+								
+							</select>
+						</div>
+						<div class = "form-group">
+							<label for = "projectFile">Upload your project files</label>
+							<input type = "file" class = "form-control" name = "projectFile" id = "projectFile" required>
+						</div>
+					</form>
+				</div>
+				<div class = "modal-footer">
+					<button type = "submit" form = "updateProjectForm" class = "btn btn-success">Upload</button>
+					<button class = "btn btn-primary" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modal to confirm deleting a project (should be made) -->
+	<div class = "modal fade" id = "confirmDeleteProjectModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Delete Project</h3>
+				</div>
+				<div class = "modal-body">
+					<p>Are you sure you want to delete this project?</p>
+				</div>
+				<div class = "modal-footer">
+					<button class = "btn btn-success" data-dismiss = "modal" id = "confirmDeleteButton">Delete</button>
+					<button class = "btn btn-primary" data-dismiss = "modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--modals to show error messages if format is not supported or file is too big -->
+	<div class = "modal fade" id = "fileFormatErrorModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Oops!</h3>
+				</div>
+				<div class = "modal-body">
+					<p>This file format is not supported.</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-warning" data-dismiss = "modal">Sorry!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "modal fade" id = "fileSizeErrorModal">
+		<div class = "modal-dialog modal-sm">
+			<div class = "modal-content">
+				<div class = "modal-header">
+					<button class = "close" data-dismiss = "modal">&times;</button>
+					<h3 class = "modal-title">Oops!</h3>
+				</div>
+				<div class = "modal-body">
+					<p>Your file is too big.</p>
+				</div>
+				<div class = "modal-footer">
+					<button type = "button" class = "btn btn-warning" data-dismiss = "modal">Sorry!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

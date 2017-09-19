@@ -1,0 +1,28 @@
+*{
+	//border: 0px solid red;
+}
+
+body{
+	padding-top: 50px;
+}
+
+.faqCaret{
+	display: inline;
+	float: right;
+}
+
+a, a:hover, a:active, a:focus, a:visited{
+	text-decoration: none;
+	outline: 0;
+}
+
+footer{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #222;
+	color: white;
+}
+
+footer a:hover{
+	color: deepskyblue;
+}

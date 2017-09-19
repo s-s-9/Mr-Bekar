@@ -1,0 +1,23 @@
+*{
+	border: 0px solid red;
+}
+
+body{
+	padding-top: 50px;
+}
+
+footer{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #222;
+	color: white;
+}
+
+a, a:hover, a:active, a:focus, a:visited{
+	text-decoration: none;
+	outline: 0;
+}
+
+footer a:hover{
+	color: deepskyblue;
+}

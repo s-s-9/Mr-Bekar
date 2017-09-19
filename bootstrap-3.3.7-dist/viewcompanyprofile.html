@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title>Mr. Bekar</title>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+	<link rel = "stylesheet" href = "css/bootstrap.min.css">
+	<link rel = "stylesheet" href = "css/viewcompanyprofile.css">
+	<script src = "js/jquery-3.2.1.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/viewcompanyprofile.js"></script>
+</head>
+
+<body>
+	<!--navigation bar -->
+	<nav class = "navbar navbar-fixed-top navbar-default">
+		<div class = "container">
+			<!--place for logo -->
+			<div class = "navbar-header">
+				<a href = "#" class = "navbar-brand">Mr. Bekar</a>
+				<!--button to show or collapse main navigation bar -->
+				<button class = "navbar-toggle" data-toggle = "collapse" data-target = "#mainNavBar">
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+					<span class = "icon-bar"></span>
+				</button>
+			</div>
+			<!-- this holds the actual contents of the navigation bar -->
+			<div class = "collapse navbar-collapse" id = "mainNavBar">
+				<ul class = "nav navbar-nav">
+					<li><a href = "bakerhome.html">Back to Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br/>
+	<!--place to show the company's name and logo -->
+	<div class = "container text-center">
+		<figure class = "figure">
+			<a href = "#"  data-toggle = "modal" data-target = "#viewProfilePicModal">
+				<img class = "img-rounded" id = "profilePic">
+			</a>
+		</figure>
+		<h3 class = "text-info" id = "showNameInProfile"></h3>
+	</div>
+	
+	<hr>
+	
+	<!--tabbed sections to show the company's active jobs and stats-->
+	<div class = "container">
+		<h3 class = "text-info">Records</h3>
+		<!--here are the tabs -->
+		<ul class = "nav nav-tabs">
+			<li class = "active"><a href = "#activejobs" data-toggle = "tab">Active jobs</a>
+			<li><a href = "#stats" data-toggle = "tab">Statistics</a>
+		</ul>
+		<!-- here are the actual panes -->
+		<div class = "tab-content">
+			<div class = "tab-pane fade in text-center active" id = "activejobs">
+				<hr>
+				<!--place to show the active jobs this company has posted -->
+				<div class = "table-responsive">
+					<table class = "table table-striped">
+						<thead>
+							<tr>
+								<th>Job ID</th>
+								<th>Position</th>
+								<th>Type</th>
+								<th>Salary</th>
+								<th>Deadline</th>
+								<th>Circular</th>
+							</tr>
+						</thead>
+						<tbody id = "jobsPostedByThisCompany" class = "text-left">
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class = "tab-pane fade in text-center" id = "stats">
+				<h4 class = "text-info">Stats about your activities here</h4>
+				<div class = "jumbotron text-center" id = "companyStats">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<!--place to show this company's contact information -->
+	<div class = "container">
+		<h3 class = "text-info">Contact</h3>
+		Email: <p class = "text-info"><a href = "#" id = "companyEmail"></a></p>
+		Website: <p class = "text-info">
+					<a target = "_blank" id = "companyWebsite"></a>
+				 </p>
+	</div>
+	
+	<hr>
+	<!--footer -->
+	
+	<!--here are the modals (to view profile picture, to update stuffs)-->
+	<div class = "modal fade" id = "viewProfilePicModal">
+		<div class = "modal-dialog modal-md">
+			<div class = "modal-content">
+				
+				<div class = "modal-body text-center">
+					<button type = "button" class = "close" data-dismiss = "modal">&times;</button>
+					<br/><br/>
+					<img id = "viewProfilePicImg" height = "500px" width = "500px">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>
